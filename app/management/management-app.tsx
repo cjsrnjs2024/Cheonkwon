@@ -329,7 +329,7 @@ export default function ManagementApp() {
     <aside className={`sidebar ${mobileMenu?"open":""}`}>
       <button className="brand" onClick={()=>go("dashboard")} aria-label="천권태권도장 대시보드로 이동"><Image className="brand-logo" src="/cheonkwon-logo.png" width={1500} height={870} alt="Cheon Kwon Adult Taekwondo"/></button>
       <div className="nav-label">메뉴</div>
-      <nav className="side-nav"><button className={view==="dashboard"?"active":""} onClick={()=>go("dashboard")}><Icon name="grid"/>대시보드2</button><button className={view==="attendance"?"active":""} onClick={()=>go("attendance")}><Icon name="check"/>출석 체크</button><button className={view==="members"||view==="detail"?"active":""} onClick={()=>go("members")}><Icon name="users"/>회원 관리</button><button className={view==="exams"?"active":""} onClick={()=>go("exams")}><Icon name="shield"/>심사 관리</button></nav>
+      <nav className="side-nav"><button className={view==="dashboard"?"active":""} onClick={()=>go("dashboard")}><Icon name="grid"/>대시보드</button><button className={view==="attendance"?"active":""} onClick={()=>go("attendance")}><Icon name="check"/>출석 체크</button><button className={view==="members"||view==="detail"?"active":""} onClick={()=>go("members")}><Icon name="users"/>회원 관리</button><button className={view==="exams"?"active":""} onClick={()=>go("exams")}><Icon name="shield"/>심사 관리</button></nav>
       <div className="sidebar-bottom"><button className="sidebar-export" onClick={exportStoreBackup} disabled={!loaded||backupBusy} title="회원 연락처와 생년월일이 포함된 Excel 백업을 내려받습니다."><Icon name="download"/>{backupBusy?"엑셀 파일 생성 중…":"Excel로 백업"}</button></div>
     </aside>
     {mobileMenu&&<button className="scrim nav-scrim" onClick={()=>setMobileMenu(false)} aria-label="메뉴 닫기"/>}
