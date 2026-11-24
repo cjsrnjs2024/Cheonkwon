@@ -11,3 +11,16 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## Product TODO
 
 Before planning or implementing product features, read `TODO.md` and account for the recorded roadmap items.
+
+## Automatic GitHub deployment
+
+For natural-language requests that modify this repository, treat the request as authorization to deploy the completed change unless the user explicitly says to keep it local, make a draft, or not deploy.
+
+After implementing a requested change:
+
+1. Run the relevant tests, lint checks, and production build in proportion to the change.
+2. Commit only the files that belong to the current request. Never include unrelated pre-existing changes, local environment files, credentials, secrets, or generated build artifacts.
+3. Push the commit to `origin/main` without force-pushing. A successful push triggers the connected Vercel production deployment.
+4. Report the commit hash, push result, and any verification failures to the user.
+
+Do not deploy when validation reveals a material failure caused by the requested change. If the remote branch has advanced, integrate it safely without discarding local or remote work. Never rewrite shared history.
